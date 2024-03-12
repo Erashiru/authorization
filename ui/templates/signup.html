@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup</title>
+</head>
+<body>
+    <nav>
+        <ul class="nav-menu">
+            <li><a href='/'>Home</a></li>
+            <li><a href='/user/signup'>Signup</a></li>
+            <li><a href='/user/login'>Login</a></li>
+        </ul>
+    </nav>
+    <form action="" method="POST">
+        {{with .Form.FieldErrors.email}}
+            <label class='error'>{{.}}</label>
+        {{end}}
+        <p>Your email: <input type="email" placeholder="Enter your email" name="email"></p>
+        {{with .Form.FieldErrors.name}}
+            <label class='error'>{{.}}</label>
+        {{end}}
+        <p>Create username: <input type="text" placeholder="Enter your username" name="username"></p>
+        {{with .Form.FieldErrors.password}}
+            <label class='error'>{{.}}</label>
+        {{end}}
+        <p>Your password: <input type="password" placeholder="Enter your password" name="password"></p>
+        <p>Your password again: <input type="password" placeholder="Enter your password again" name="password-again"></p>
+
+        <input type="submit" value="Sign up">
+    </form>
+</body>
+</html>
